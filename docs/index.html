@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#282923"><meta name="description" content="跟著守書貓阿墨走進深夜解憂書房，讓一張花牌、一道極光與一本書，陪你整理今晚的心事。"><title>心事書櫃｜深夜解憂書房</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' rx='12' fill='%232d352e'/%3E%3Ctext x='25' y='35' text-anchor='middle' font-size='35' fill='%23e8dfc9'%3E月%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="story.css"></head>
+<body><div class="room-bg" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><a href="#main" class="skip-link">跳至主要內容</a><header class="header"><a href="#" class="brand" id="home-link"><span class="seal">心<br>事</span><span>心事書櫃<small>深 夜 解 憂 書 房</small></span></a><nav aria-label="主要導覽"><button id="nav-home" class="active">書房</button><button id="nav-saved">我的書籤 <span id="saved-count">0</span></button><button id="nav-about">關於書房</button></nav><button class="motion-control" id="motion-toggle" aria-pressed="false" title="切換減少動態">◌ <span>微光動態</span></button></header>
+<main id="main" tabindex="-1">
+<section id="home-screen" class="screen home-screen"><div class="home-copy"><div class="eyebrow"><span></span> 為每一個還醒著的心事</div><h1>今晚，<br>先把<span>心事</span>放下。</h1><p class="home-lead">世界走得很快，你可以慢一點。<br>選一張花牌，讓一本書陪你找回方向。</p><button class="primary" id="enter">從路口開始 <span>→</span></button><p class="home-caption">一張心事花牌 · 一頁溫柔回應 · 一本為你選的書</p></div><div class="vertical-poem">夜深了，<br>這裡還有一盞燈。</div><div class="home-bottom"><span class="small-line"></span><span>不必急著找到答案，先讓自己被聽見。</span><button id="how-button">直接進書房 ↗</button></div><div class="floating-dust" aria-hidden="true"></div></section>
+<section id="guide-screen" class="screen cinema hidden" aria-labelledby="guide-title">
+  <div class="cinema-camera" id="guide-camera" aria-hidden="true"></div>
+  <div class="cinema-rain" aria-hidden="true"></div>
+  <div class="cinema-door-light" aria-hidden="true"></div>
+  <div class="cinema-shade" aria-hidden="true"></div>
+  <header class="cinema-top">
+    <span>心事書櫃 <span aria-hidden="true">／</span> 阿墨的引路</span>
+    <div>
+      <button type="button" id="guide-sound" aria-pressed="false">開啟音效</button>
+      <button type="button" id="guide-motion" aria-pressed="false">減少動態</button>
+      <button type="button" id="guide-skip">略過引路 <span aria-hidden="true">↗</span></button>
+    </div>
+  </header>
+  <h2 id="guide-title" class="sr-only" tabindex="-1">跟著阿墨，走進雨夜</h2>
+  <button type="button" id="guide-cat" class="cinema-cat hidden" aria-label="點一下阿墨，跟著牠走"><span aria-hidden="true">✧</span></button>
+  <div class="cinema-bottom">
+    <p id="guide-caption" role="status" aria-atomic="true"></p>
+    <button type="button" class="primary hidden" id="guide-next"></button>
+  </div>
+</section>
+<section id="welcome-screen" class="screen hidden">
+<article class="welcome-letter">
+  <p class="eyebrow">門內的書房 ／ 一盞為你留的燈</p>
+  <h2>今晚，書櫃收到一封沒有署名的信</h2>
+  <p>夜深之後，城市裡有一間書房，仍替晚睡的人留著燈。</p>
+  <p>每天，都有人帶著一件還說不清楚的心事走進來。他們選一張花牌，把問題交給書櫃。書櫃不替誰預言命運，只從書頁間找出一段回應、一個可以試試看的小步驟，和一本也許能陪伴此刻的書。</p>
+  <p>離開時，那件心事不一定已經有了答案。但你可以帶走一頁方向，等準備好了，再慢慢往下讀。</p>
+  <blockquote>阿墨：「挑一張吧。從最放不下的那件事開始說就好。」</blockquote>
+  <button type="button" id="welcome-next" class="primary">選擇心事花牌 <span>→</span></button>
+</article>
+</section>
+<section id="choose-screen" class="screen hidden"><div class="step-heading"><p class="eyebrow">第一頁 / 選一張花牌</p><h2>哪一張，最靠近此刻的你？</h2><p>把心事放進一張花牌裡。沒有對錯，選最有感覺的那一張。</p></div><div id="card-deck" class="card-deck" role="group" aria-label="五種心事花牌"></div><div class="choice-caption" id="choice-caption" aria-live="polite"></div><div class="step-actions"><button class="text-button" id="choose-back">← 回到書房</button><button class="primary" id="choose-next">帶著這張花牌 <span>→</span></button></div><p class="quiet-note">花牌只為心事分類，不預測命運。</p></section>
+<section id="write-screen" class="screen hidden"><div class="step-heading"><p class="eyebrow">第二頁 / 寫下心事</p><h2>把想說的，輕輕寫下。</h2><p>阿墨：「說得零零碎碎也沒關係，我在聽。」</p></div><div class="writing-stage"><div id="selected-card" class="selected-card" aria-hidden="true"></div><form id="wish-form" class="paper writing-paper"><div class="paper-label"><label for="wish">此刻，你想交給極光什麼心事或心願？</label><span id="category-badge"></span></div><textarea id="wish" maxlength="500" rows="5" required placeholder="例如：我總是不好意思拒絕朋友，最後卻覺得很累。" aria-describedby="input-note input-error"></textarea><div class="input-meta"><span id="input-note">你的心事不公開，也不會傳送到伺服器。</span><span id="char-count">0 / 500</span></div><p class="wish-invite">「把心願告訴極光吧。我們一起找找，第一步可以從哪裡開始。」</p><div class="example-area"><span>不知道怎麼開始？</span><div id="examples"></div></div><p id="input-error" class="form-error" role="alert"></p><button class="primary submit-wish" type="submit">將心事交給書櫃 <span>✧</span></button></form></div><div class="step-actions"><button id="write-back" class="text-button">← 重新選擇花牌</button><span class="quiet-note">閱讀靈感與自我整理，保留屬於你的選擇。</span></div></section>
+<section id="clarify-screen" class="screen hidden">
+  <div class="step-heading"><p class="eyebrow">阿墨正在聽</p><h2>這次，你想先聊哪一部分？</h2></div>
+  <article class="paper clarify-paper">
+    <img src="assets/story/amo.webp" width="96" height="108" alt="" loading="lazy">
+    <p>「我聽見了幾個方向。你可以選一個，也可以回去改寫，我再聽一次。」</p>
+    <div id="clarify-options" class="clarify-options"></div>
+    <button type="button" class="text-button" id="clarify-back">← 回去補充心事</button>
+  </article>
+</section>
+<section id="magic-screen" class="screen magic-screen hidden">
+  <p class="eyebrow">第三頁 ／ 極光正在尋書</p>
+  <h2 id="magic-message">阿墨：「讓我找找……」</h2>
+  <figure class="aurora-stage" aria-hidden="true">
+    <div class="aurora-frames" id="aurora-frames"></div>
+    <svg class="aurora-ribbon" viewBox="0 0 720 380" preserveAspectRatio="none"><defs><linearGradient id="aurora-ink"><stop stop-color="#77b5a7"/><stop offset=".55" stop-color="#ada1d8"/><stop offset="1" stop-color="#e0c594"/></linearGradient></defs><path d="M-30 299C180 359 134 86 346 167S566 251 762 59"/></svg>
+    <div id="magic-card"></div>
+  </figure>
+  <p id="magic-caption" class="magic-sub"></p>
+  <button type="button" id="skip-animation" class="secondary">略過動畫 →</button>
+</section>
+<section id="result-screen" class="screen hidden"><div class="step-heading result-heading"><p class="eyebrow">留給你的 / 一頁方向</p><h2>願這一頁，陪你走一小段。</h2></div><div id="result-content"></div><div class="step-actions result-bottom"><button id="another-wish" class="text-button">← 再安放一件心事</button><button type="button" id="leave-room" class="secondary">和阿墨走到門邊 →</button></div></section>
+<section id="farewell-screen" class="screen hidden"><div class="guide-layout"><div class="guide-art"><img src="assets/story/guide/09.webp" alt="暖燈照著門檻，阿墨在門邊回頭。"></div><div class="guide-copy"><p class="eyebrow">門邊 ／ 回到夜色裡</p><h2>路可以慢慢選。</h2><p>門外還是原來的街道。那件心事可以等你準備好了，再慢慢往下讀。</p><blockquote>阿墨：「今晚，先帶走這一頁。下次路過，燈還會亮著。」</blockquote><div class="guide-actions"><button class="primary" id="farewell-home">回到十字路口 →</button><button class="text-button" id="farewell-result">再看這張書籤</button></div></div></div></section>
+<section id="saved-screen" class="screen hidden"><div class="step-heading"><p class="eyebrow">我的書籤 / 那些留下的微光</p><h2>把溫柔，留給需要的時候。</h2><p>收藏留在這台裝置；不包含你寫下的心事。</p></div><div class="saved-toolbar"><span id="saved-summary"></span><button class="text-button" id="export-saved">匯出全部書籤 ↓</button></div><div id="saved-list" class="saved-list"></div></section>
+<section id="about-screen" class="screen hidden"><div class="step-heading"><p class="eyebrow">關於書房 / 為什麼這盞燈亮著</p><h2>讓閱讀，成為靠近自己的起點。</h2></div><article class="paper about-paper"><p class="intro-serif">當資訊很多、心事卻無處安放，<br>我們想留下一個可以慢慢說話的地方。</p><p>心事書櫃以日式深夜書房為靈感，透過五張花牌，陪你整理人際、感情、工作、人生與說不清的未知。一個問題，帶走一張正向書籤與一本中文推薦書。</p><div class="about-columns"><div><h3>一個問題，一本書</h3><p>以問題裡的情境與關鍵字配對策選書庫，重視內容相關性。近期推薦會留在本機，優先避免重複；不合適或讀過可換一本。</p></div><div><h3>正向，但不催你振作</h3><p>先承認你的處境，再給一個可選擇的小行動。格言、故事與練習為本站原創，與書中引文清楚區別；不以吉凶替你做決定。</p></div><div><h3>中文閱讀，圖書館入口</h3><p>書目核對使用台灣圖書館與中文出版資訊，提供已查得的館藏頁及各地查詢入口。即時在架、借閱資格與預約依各館為準。</p></div><div><h3>你的心事，留在你手裡</h3><p>問題在瀏覽器內處理，不上傳。只保存你主動收藏的書籤、推薦作品 ID、動態偏好與本機回饋，可隨時清除。</p></div></div><details><summary>目前的推薦方式與資料來源</summary><p>本版採用已整理的中文書目與情境關鍵字規則，阿墨的引導與追問依辨識到的主題變化，並非即時 AI 對話；尚未批次串接圖書館 API。沒有相符內容時，會請你補充情境，不隨機配書。本站的書籍導讀與推薦理由為自行撰寫，不搬運出版社摘要、封面或全文。</p><div id="source-list"></div><p class="micro">書目核對日期：2026 年 11 月 3 日。版本與館藏可能調整，請以來源頁為準。裝飾書封為本站設計，並非出版品實際封面。</p></details><details><summary>資料與隱私設定</summary><p>收藏與推薦紀錄僅存在這台裝置，不跨裝置同步。清除瀏覽器網站資料也會移除紀錄。外部館藏網站適用各自的資料政策；本站不讀取你的借閱證或借閱紀錄。</p><button id="clear-data" class="secondary">清除本機收藏、推薦紀錄與回饋</button><p id="clear-status" class="micro" role="status"></p></details><p class="micro">這裡提供閱讀與自我整理的陪伴，無法代替專業心理、法律或醫療協助；也不承諾一本書能解決所有困難。</p></article></section>
+</main><footer><span>心事書櫃 <i>／</i> 日式深夜解憂書房</span><span>一盞燈，一頁方向。</span><button id="footer-about">資料來源與隱私</button></footer><dialog id="library-dialog" aria-labelledby="library-title"><button class="dialog-close" aria-label="關閉館藏查詢">×</button><p class="eyebrow">把閱讀帶回生活</p><h2 id="library-title">找一個，方便抵達的書房。</h2><div id="library-book"></div><label for="library-select">選擇圖書館</label><select id="library-select"></select><p class="micro">先複製書名或 ISBN，再到館藏網站查詢。各館借閱資格與在架狀態依現場及網站為準。</p><div class="dialog-actions"><button id="copy-title" class="secondary">複製書名</button><button id="copy-isbn" class="secondary">複製 ISBN</button><a id="library-go" class="primary" target="_blank" rel="noopener noreferrer">前往館藏查詢 ↗</a></div><div id="direct-holding"></div></dialog><dialog id="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title">清除這台裝置的紀錄？</h2><p>收藏、近期推薦與回饋將移除。你可以先到「我的書籤」匯出備份。</p><div class="dialog-actions"><button class="secondary" id="cancel-clear">保留紀錄</button><button class="primary" id="confirm-clear">確認清除</button></div></dialog><div id="toast" class="toast" role="status"></div><script src="data.js"></script><script src="story-sound.js"></script><script src="app.js"></script></body></html>
